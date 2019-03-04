@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/core/html"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
@@ -11,9 +11,15 @@
 <h:body>
 	<h1 style="Text-align: center">Store Manager</h1>
 	<h:form>
-		<h:button value="Cadastrar produtos">
-			<h:commandLink action="CadastroProduto" />
-		</h:button>
+		<p:commandLink value="Cadastrar produtos" action="cadastroProduto" />
+		<p:commandLink value="Alterar produto" action="" />
+		<p:commandLink value="Visualizar produtos" action="" />
+		<p:commandLink value="Relatório de produtos" action="" />
+		<p:commandLink value="Plano de Estoque" action="" />
+		<p:commandLink value="Histórico" action="" />
+		<p:commandLink value="Gráficos" action="" />
+		<p:commandLink value="Registro fluxo de produto" action="" />
+		<p:commandLink value="Solicitar produtos" action="" />
 	</h:form>
 </h:body>
 </html>
