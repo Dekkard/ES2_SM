@@ -14,48 +14,21 @@ import org.hibernate.annotations.Proxy;
 @Entity
 @Table(name = "estoqueEntrada")
 @Proxy(lazy = false)
-public class EstoqueEntrada implements Serializable{
+public class EstoqueCompra implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column (name="id")
 	private Integer id;
-	@Column (name="produto_id")
-	private Integer produto_id;
 	@Column (name="data")
 	private Date data;
-	@Column (name="qtdEntrada")
-	private Integer qtdEntrada;
-	@Column (name="valorPago")
-	private Double valorPago;
-	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public Integer getProduto_id() {
-		return produto_id;
-	}
-	public void setProduto_id(Integer produto_id) {
-		this.produto_id = produto_id;
-	}
-	public Date getData() {
-		return data;
-	}
-	public void setData(Date data) {
-		this.data = data;
-	}
-	public Integer getQtdEntrada() {
-		return qtdEntrada;
-	}
-	public void setQtdEntrada(Integer qtdEntrada) {
-		this.qtdEntrada = qtdEntrada;
-	}
-	public Double getValorPago() {
-		return valorPago;
-	}
-	public void setValorPago(Double valorPago) {
-		this.valorPago = valorPago;
-	}
+	@Column (name="qtd")
+	private Integer qtd;
+	@Column (name="valor")
+	private Double valor;
+	@Column (name="id_fornecedor")
+	private Integer id_fornecedor;
+	@Column (name="id_produto")
+	private Integer id_produto;
+	@Column (name="id_funcionario")
+	private Integer id_funcionario;
 }

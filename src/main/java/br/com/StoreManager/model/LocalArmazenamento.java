@@ -19,25 +19,10 @@ public class LocalArmazenamento implements Serializable{
 	private Integer id;
 	@Column (name="descricao")
 	private String descricao;
+	@Column (name="endereco")
+	private String endereco;
+	@Column (name="lote")
+	private String lote;
 	@Column (name="qtdMax")
-	private Integer qtdMax;
-	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	public Integer getQtdMax() {
-		return qtdMax;
-	}
-	public void setQtdMax(Integer qtdMax) {
-		this.qtdMax = qtdMax;
-	}
+	private Integer qtdMax;	
 }

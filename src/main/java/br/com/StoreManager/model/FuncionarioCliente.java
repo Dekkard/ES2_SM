@@ -10,26 +10,13 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Proxy;
 
 @Entity
-@Table(name = "tipoUnidade")
+@Table(name = "funcionario")
 @Proxy(lazy = false)
-public class TipoUnidade implements Serializable{
+public class FuncionarioCliente implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@Column (name="id")
 	private Integer id;
-	@Column (name="descricao")
-	private String descricao;
-	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getDescricao() {
-		return descricao;
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+	@Column (name="perfil")
+	private String perfil;
 }

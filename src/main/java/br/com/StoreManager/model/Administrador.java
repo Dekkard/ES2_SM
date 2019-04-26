@@ -17,22 +17,6 @@ public class Administrador implements Serializable {
 	@Id
 	@Column(name = "id")
 	private Integer id;
-	@Column(name = "funcionario_id")
-	private Integer funcionario_id;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Integer getFuncionario_id() {
-		return funcionario_id;
-	}
-
-	public void setFuncionario_id(Integer funcionario_id) {
-		this.funcionario_id = funcionario_id;
-	}
+	@Column(name = "perfil")
+	private String perfil;
 }
