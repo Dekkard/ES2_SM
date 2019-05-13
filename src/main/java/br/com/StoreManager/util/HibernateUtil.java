@@ -5,14 +5,10 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import br.com.StoreManager.model.Administrador;
-import br.com.StoreManager.model.Cliente;
-import br.com.StoreManager.model.EstoqueCompra;
-import br.com.StoreManager.model.EstoqueVenda;
-import br.com.StoreManager.model.Fornecedor;
-import br.com.StoreManager.model.FuncionarioCliente;
-import br.com.StoreManager.model.FuncionarioFornecedor;
+import br.com.StoreManager.model.Contato;
+import br.com.StoreManager.model.Funcionario;
 import br.com.StoreManager.model.LocalArmazenamento;
+import br.com.StoreManager.model.Movimentacao;
 import br.com.StoreManager.model.Produto;
 
 public class HibernateUtil {
@@ -24,13 +20,9 @@ public class HibernateUtil {
 			Configuration configuration = new Configuration().configure();
 
 			configuration.addPackage("br.com.StoreManager.model");
-			configuration.addAnnotatedClass(Administrador.class);
-			configuration.addAnnotatedClass(Cliente.class);
-			configuration.addAnnotatedClass(EstoqueCompra.class);
-			configuration.addAnnotatedClass(EstoqueVenda.class);
-			configuration.addAnnotatedClass(Fornecedor.class);
-			configuration.addAnnotatedClass(FuncionarioFornecedor.class);
-			configuration.addAnnotatedClass(FuncionarioCliente.class);
+			configuration.addAnnotatedClass(Contato.class);
+			configuration.addAnnotatedClass(Movimentacao.class);
+			configuration.addAnnotatedClass(Funcionario.class);
 			configuration.addAnnotatedClass(LocalArmazenamento.class);
 			configuration.addAnnotatedClass(Produto.class);
 			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()

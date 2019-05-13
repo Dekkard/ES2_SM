@@ -19,18 +19,10 @@
 		<property name="show_sql">true</property>
 		<!-- Drop and re-create the database schema on startup -->
 		<!-- <property name="hbm2ddl.auto">create</property> -->
-		<mapping class="br.com.StoreManager.model.Administrador" />
-		<mapping class="br.com.StoreManager.model.Categoria" />
-		<mapping class="br.com.StoreManager.model.Cliente" />
-		<mapping class="br.com.StoreManager.model.Compra" />
-		<mapping class="br.com.StoreManager.model.EstoqueEntrada" />
-		<mapping class="br.com.StoreManager.model.EstoqueSaida" />
-		<mapping class="br.com.StoreManager.model.FormaPagamento" />
-		<mapping class="br.com.StoreManager.model.Fornecedor" />
+		<mapping class="br.com.StoreManager.model.Contato" />
+		<mapping class="br.com.StoreManager.model.Movimentacao" />
 		<mapping class="br.com.StoreManager.model.Funcionario" />
 		<mapping class="br.com.StoreManager.model.LocalArmazenamento" />
 		<mapping class="br.com.StoreManager.model.Produto" />
-		<mapping class="br.com.StoreManager.model.TipoDoc" />
-		<mapping class="br.com.StoreManager.model.TipoUnidade" />
 	</session-factory>
 </hibernate-configuration>
