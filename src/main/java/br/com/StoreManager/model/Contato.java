@@ -3,6 +3,7 @@ package br.com.StoreManager.model;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,29 +11,29 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.Proxy;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "Contato")
 @Proxy(lazy = false)
-public class Contato implements Serializable{
+public class Contato implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column (name="id")
+	@Column(name = "id")
 	private Integer id;
-	@Column (name="cpfCnpj")
+	@Column(name = "cpfCnpj")
 	private Integer cpfCnpj;
-	@Column (name="nome")
+	@Column(name = "nome")
 	private String nome;
-	@Column (name="email")
+	@Column(name = "email")
 	private String email;
-	@Column (name="endereco")
+	@Column(name = "endereco")
 	private String endereco;
-	@Column (name="telefone")
+	@Column(name = "telefone")
 	private Integer telefone;
-	@Column (name="tipo")
+	@Column(name = "tipo")
 	private String tipo;
-	@OneToMany (mappedBy="cliente", targetEntity = Movimentacao.class, fetch=FetchType.EAGER)
-	private List<Movimentacao> multas;
+	@OneToMany(mappedBy = "Contato", targetEntity = Movimentacao.class, 
+			cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Movimentacao> movimentacao;
 }

@@ -1,10 +1,14 @@
 package br.com.StoreManager.model;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Proxy;
@@ -24,5 +28,8 @@ public class LocalArmazenamento implements Serializable{
 	@Column (name="lote")
 	private String lote;
 	@Column (name="qtdMax")
-	private Integer qtdMax;	
+	private Integer qtdMax;
+	@OneToMany(mappedBy = "LocalArmazenamento", targetEntity = Movimentacao.class, 
+			cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Produto> produto;
 }
