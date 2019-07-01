@@ -10,4 +10,5 @@ public interface ProdutoDAO {
 	public void excluir(Produto produto);
 	public List<Produto> listarTodos();
 	public Produto buscarProduto(Integer id);
+	Produto buscarProdutoDescricao(String descricao);
 }

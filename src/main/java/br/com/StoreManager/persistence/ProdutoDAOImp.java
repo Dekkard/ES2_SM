@@ -20,11 +20,6 @@ public class ProdutoDAOImp implements ProdutoDAO {
 			session = sessionFactory.openSession();
 			session.beginTransaction();
 			session.save(produto);
-//			session.getNamedQuery("Produto.Insert").setParameter(":descricao",produto.getDescricao())
-//			.setParameter(":QTDestoque",produto.getQTDestoque())
-//			.setParameter(":marca",produto.getMarca())
-//			.setParameter(":valorUnitario",produto.getValorUnitario())
-//			.setParameter(":localArm_id",produto.getLocalArmazenamento());
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			if (session != null) {
@@ -88,7 +83,7 @@ public class ProdutoDAOImp implements ProdutoDAO {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
-			lista = session.createQuery("from Produto").list();
+			lista = session.getNamedQuery("Produto.find").list();
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			if (session != null) {
@@ -111,7 +106,31 @@ public class ProdutoDAOImp implements ProdutoDAO {
 			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 			session = sessionFactory.openSession();
 			session.beginTransaction();
-			produto = session.load(Produto.class, id);
+			produto = (Produto) session.getNamedQuery("Produto.findById").
+					setParameter("id", id).setMaxResults(1).uniqueResult();
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			if (session != null) {
+				session.getTransaction().rollback();
+			}
+			return null;
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+		return produto;
+	}
+	@Override
+	public Produto buscarProdutoDescricao(String descricao) {
+		session = null;
+		Produto produto = new Produto();
+		try {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+			session = sessionFactory.openSession();
+			session.beginTransaction();
+			produto = (Produto) session.getNamedQuery("Produto.findByDescricao").
+					setParameter("descricao", descricao).setMaxResults(1).uniqueResult();
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			if (session != null) {

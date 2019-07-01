@@ -21,7 +21,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Proxy;
 
 @Entity
-@Table(name = "Produto")
+@Table(name = "produto")
 @Proxy(lazy = false)
 @NamedQueries({
 	@NamedQuery(name = "Produto.find",query = "SELECT p FROM Produto p"),

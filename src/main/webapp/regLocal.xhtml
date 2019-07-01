@@ -15,18 +15,18 @@
 	<h:form	id="regLocais">
 		<p:panelGrid columns="2">
 			<p:outputLabel value="Descrição:" />
-			<p:inputText value="#{localArmMB.localArm.descricao}" size="40" />
+			<p:inputText value="#{localArmMB.localArmazenamento.descricao}" size="40" />
 			<p:outputLabel value="Endereço:" />
-			<p:inputText value="#{localArmMB.localArm.endereco}" size="40" />
+			<p:inputText value="#{localArmMB.localArmazenamento.endereco}" size="40" />
 			<p:outputLabel value="Lote" />
-			<p:inputText value="#{localArmMB.localArm.lote}" size="40" />
+			<p:inputText value="#{localArmMB.localArmazenamento.lote}" size="40" />
 			<p:outputLabel value="Capacidade Máxima:" />
-			<p:inputText value="#{localArmMB.localArm.qtdMax}" size="40" />
+			<p:inputText value="#{localArmMB.localArmazenamento.qtdMax}" size="40" />
 		</p:panelGrid>
 		<p:commandButton value="Cadastrar" action="#{localArmMB.incluir}" update="@form :Relatorio"/>
 	</h:form>
 	<h:form id="Relatorio">
-		<p:dataTable var="la" value="#{localArmMB.lista}">
+		<p:dataTable var="la" value="#{localArmMB.listarTodos()}">
 			<p:column headerText="ID">
 				#{la.id}
 			</p:column>
@@ -35,9 +35,6 @@
 			</p:column>
 			<p:column headerText="Endereço">
 				#{la.endereco}
-			</p:column>
-			<p:column headerText="ID">
-				#{la.id}
 			</p:column>
 			<p:column headerText="Lote">
 				#{la.lote}

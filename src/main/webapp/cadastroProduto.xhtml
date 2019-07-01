@@ -18,19 +18,19 @@
 			<p:inputText value="#{ProdutoMB.produto.descricao}" size="40" />
 			<p:outputLabel value="Quantidade Inicial:" />
 			<p:inputText value="#{ProdutoMB.produto.QTDestoque}" size="40" />
-			<p:outputLabel value="Local Armazenado:" for="localArm"/>
-			<h:selectOneMenu value="#{ProdutoMB.produto.localArmazenamento}" converter="LocalArmConverter" id="localArm" 
-				style="width:250px">
-            	<f:selectItems var="localArm" value="#{localArmMB.lista}" 
-            					itemLabel="#{localArm.descricao}"
-            					itemValue="#{localArm}"/>
-			</h:selectOneMenu>
 			<p:outputLabel value="Marca:" />
 			<p:inputText value="#{ProdutoMB.produto.marca}" size="40" />
 			<p:outputLabel value="Valor da Unidade:" />
 			<p:inputText value="#{ProdutoMB.produto.valorUnitario}" size="40" />
+			<p:outputLabel value="Local Armazenado:"/>
+			<h:selectOneMenu value="#{ProdutoMB.produto.localArmazenamento}" style="width:250px">
+				<f:selectItem itemLabel="Selecione" itemValue=""/>
+            	<f:selectItems var="localArm" value="#{localArmMB.listarTodos()}"
+            									itemLabel="#{localArm.descricao}"
+            									itemValue="#{localArm}"/>
+			</h:selectOneMenu>
 		</p:panelGrid>
-		<p:commandButton value="Cadastrar" action="#{ProdutoMB.incluir}" render="true"/>
+		<p:commandButton value="Cadastrar" action="#{ProdutoMB.incluir}"/>
 	</h:form>
 	<p:commandLink value="Voltar" action="index.xhtml" />
 </h:body>

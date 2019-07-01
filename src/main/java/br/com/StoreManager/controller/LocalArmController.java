@@ -3,7 +3,7 @@ package br.com.StoreManager.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
+//import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -61,8 +61,8 @@ public class LocalArmController {
 		lac = new LocalArmDAOImp();
 		return lac.buscarLocalArmDescricao(descricao);
 	}
-	@PostConstruct
-	public void init() {
-		lista = listarTodos();
-	}
+//	@PostConstruct
+//	public void init() {
+//		lista = listarTodos();
+//	}
 }

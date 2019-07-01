@@ -17,7 +17,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Proxy;
 
 @Entity
-@Table(name = "Funcionario")
+@Table(name = "funcionario")
 @Proxy(lazy = false)
 public class Funcionario implements Serializable{
 	private static final long serialVersionUID = 1L;
