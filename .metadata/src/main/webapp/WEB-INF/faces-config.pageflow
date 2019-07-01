@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15619367858300" configfile="/StoreManager/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="370" id="pf15619485840541" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15619485840542 pf15619485840543" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="178" id="pf15619485840544" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15619485840542" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastroProduto.xhtml" x="338" y="562" id="pf15619485840545" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf15619485840543" path="cadastroProduto.xhtml"/>
+  <links id="pf15619485840542" target="pf15619485840544" source="pf15619485840541" outcome="index"/>
+  <links id="pf15619485840543" target="pf15619485840545" source="pf15619485840541" outcome="cadastroProduto"/>
+</pageflow:Pageflow>

@@ -3,14 +3,20 @@
 <hibernate-configuration>
 	<session-factory>
 		<!-- Database connection settings -->
-		<property name="connection.driver_class">org.postgresql.Driver</property>
-		<property name="connection.url">jdbc:postgresql://localhost:5432/StoreManager</property>
-		<property name="connection.username">postgres</property>
-		<property name="connection.password">postgres</property>
+<!-- 		<property name="connection.driver_class">org.postgresql.Driver</property> -->
+<!-- 		<property name="connection.url">jdbc:postgresql://localhost:5432/StoreManager</property> -->
+<!-- 		<property name="connection.username">postgres</property> -->
+<!-- 		<property name="connection.password">postgres</property> -->
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.password">mysqlbd</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/StoreManager</property>
+        <property name="hibernate.connection.username">root</property>
 		<!-- JDBC connection pool (use the built-in) -->
 		<!-- <property name="connection.pool_size">1</property> -->
 		<!-- SQL dialect -->
-		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+<!-- 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property> -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<!-- Enable Hibernate's automatic session context management -->
 		<!-- <property name="current_session_context_class">thread</property> -->
 		<!-- Disable the second-level cache -->

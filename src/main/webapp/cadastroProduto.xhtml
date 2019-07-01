@@ -6,30 +6,32 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<h:outputStylesheet library="css" name="style.css"/>
 	<title>Cadastro de Produto</title>
 </h:head>
 <h:body>
-<h1 style="text-align: center">Cadastro de Produto</h1>
+	<h1 style="text-align: center">Cadastro de Produto</h1>
 	<!--<p:outputLabel  value="Cadastro de Produto" />-->
-	<h:form> 
+	<h:form	id="cadastroProduto">
 		<p:panelGrid columns="2">
-			<p:outputLabel value="Nome:"/>
-			<p:inputText size="40" />
-			<p:outputLabel value="Descrição:"/>
-			<p:inputText size="40" />
-			<p:outputLabel value="Fornecedor:"/>
-			<p:inputText size="40" />
-			<p:outputLabel value="Local Armazenado:"/>
-			<p:inputText size="40" />
-			<p:outputLabel value="Marca:"/>
-			<p:inputText size="40" />
-			<p:outputLabel value="Valor da Unidade:"/>
-			<p:inputText size="40" />
-			<p:outputLabel value="Tipo de Unidade:"/>
-			<p:inputText size="40" />
+			<p:outputLabel value="Descrição:" />
+			<p:inputText value="#{ProdutoMB.produto.descricao}" size="40" />
+			<p:outputLabel value="Quantidade Inicial:" />
+			<p:inputText value="#{ProdutoMB.produto.QTDestoque}" size="40" />
+			<p:outputLabel value="Local Armazenado:" for="localArm"/>
+			<h:selectOneMenu value="#{ProdutoMB.produto.localArmazenamento}" converter="LocalArmConverter" id="localArm" 
+				style="width:250px">
+            	<f:selectItems var="localArm" value="#{localArmMB.lista}" 
+            					itemLabel="#{localArm.descricao}"
+            					itemValue="#{localArm}"/>
+			</h:selectOneMenu>
+			<p:outputLabel value="Marca:" />
+			<p:inputText value="#{ProdutoMB.produto.marca}" size="40" />
+			<p:outputLabel value="Valor da Unidade:" />
+			<p:inputText value="#{ProdutoMB.produto.valorUnitario}" size="40" />
 		</p:panelGrid>
-		<p:commandButton value="Cadastrar"/>
+		<p:commandButton value="Cadastrar" action="#{ProdutoMB.incluir}" render="true"/>
 	</h:form>
-	<p:commandLink value="Voltar" action="index"/>
+	<p:commandLink value="Voltar" action="index.xhtml" />
 </h:body>
 </html>
